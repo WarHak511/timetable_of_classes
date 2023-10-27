@@ -1,4 +1,6 @@
 import datetime
+import os
+from dotenv import load_dotenv
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (CommandHandler,
                           Updater,
@@ -46,7 +48,8 @@ TIMETABLE_ODD_WEEK = {
         '11:30 Аналитическая геометрия и линейная алгебра ']
 }
 
-TELEGRAM_TOKEN = '6554568938:AAFufUbNZ35CLnEtUU2vgxxiWXUxA5HOt4c'
+load_dotenv()
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = 850792184
 current_date = datetime.date.today()
 
